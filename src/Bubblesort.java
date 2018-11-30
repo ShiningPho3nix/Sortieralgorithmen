@@ -1,6 +1,6 @@
 /**
  * Eine einfache, rekursive Implementation von Bubblesort. Sortiert ein zahlen
- * Array in aufsteigender Reihenfolge.
+ * Array in aufsteigender Reihenfolge. Test
  * 
  * @author Steffen Dworsky
  *

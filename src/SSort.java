@@ -1,4 +1,6 @@
 /**
+ * SSort vererbt hauptsächlich eine Methode an alle Sortieralgorithmen.
+ * 
  * @author Steffen Dworsky
  *
  */
@@ -29,6 +31,5 @@ public class SSort {
 		}
 		return result;
 	}
-
 
 }

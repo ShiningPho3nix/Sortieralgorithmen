@@ -1,6 +1,6 @@
 /**
  * Eine einfache Implementierung des Insertsort Algorithmus. Sortiert ein zahlen
- * Array in aufsteigender Reihenfolge.
+ * Array in aufsteigender Reihenfolge. Test
  * 
  * @author Steffen Dworsky
  *

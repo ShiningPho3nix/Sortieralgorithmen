@@ -1,5 +1,5 @@
 /**
- * Eine einfache Implementierung des Quicksort Algorithmus.
+ * Eine einfache Implementierung des Quicksort Algorithmus. Test
  * 
  * @author Steffen Dworsky
  *

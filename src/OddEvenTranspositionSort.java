@@ -1,5 +1,5 @@
 /**
- * Eine einfache Implementiertung des OddEven Sort Algorithmus
+ * Eine einfache Implementiertung des OddEven Sort Algorithmus. Test
  * 
  * @author Steffen Dworsky
  *

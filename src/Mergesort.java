@@ -1,6 +1,6 @@
 /**
  * Simple Implementierung des Mergesort Algorithmus. Sortiert ein zahlen Array
- * in aufsteigender Reihenfolge.
+ * in aufsteigender Reihenfolge. Test
  * 
  * @author Steffen Dworsky
  *
