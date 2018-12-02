@@ -18,8 +18,8 @@ public class OddEvenTranspositionSort extends SSort {
 
 	/*
 	 * Die oddEven Methode ist für den korrekten Ablauf des Algorithmus
-	 * verantwortlich. Es wird hierbei nacheinander die Methode sort mit ungeradem
-	 * und mit geradem Startwert aufgerufen
+	 * verantwortlich. Es wird hierbei alternierend die Methode sort mit ungeradem
+	 * und mit geradem Startwert aufgerufen bis das Array sortiert ist.
 	 */
 	public int[] oddEven(int[] intArr) {
 

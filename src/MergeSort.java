@@ -9,14 +9,23 @@ public class MergeSort extends SSort {
 
 	static int[] intArrField;
 
-	public int[] sort(int a, int b) {
+	/**
+	 * part Methode übernimmt die Aufteilung des Arrays. Rekursiv wird das Array
+	 * immer weiter halbiert, bis die kleinste Menge erreicht wurde. Danach wird
+	 * durch die Methode merge die Sortierung vorgenommen.
+	 * 
+	 * @param a
+	 * @param b
+	 * @return
+	 */
+	public int[] part(int a, int b) {
 		if (a < b) {
 			int m = (a + b) / 2; // In m wird der Mittelpunkt zwischen a und b gefunden und
 									// gespeichert (abgerundet). Bsp. m = (0 + 11) / 2 = 5
-			sort(a, m); // rekursiv wird dann wieder der mittelpunkt in der ersten hälfte gesucht daher
+			part(a, m); // rekursiv wird dann wieder der mittelpunkt in der ersten hälfte gesucht daher
 						// von a bis zum eben gefundenen mittelpunkt. Bsp. sort(0,5), sort(0,2),
 						// sort(0,1), sort(0,0)
-			sort(m + 1, b); // nachdem bei sort(a,m) das erste mal returned wurde wird dieser abschnitt
+			part(m + 1, b); // nachdem bei sort(a,m) das erste mal returned wurde wird dieser abschnitt
 							// ausgefürt sort(0+1,1),
 			merge(a, m, b); // Nachdem sort(m+1,b) das erste mal retuned hat, wird die Methode merge
 							// ausgeführt. Dadurch wird der erste teilabschnitt sortiert. Bsp. merge(0,0,1)
@@ -26,6 +35,14 @@ public class MergeSort extends SSort {
 							// letzte return.
 	}
 
+	/**
+	 * merge Methode nimmt die zwei übergebenen, sortierten hälften und sortiert
+	 * diese beiden dann im Ziel Array zusammen ein.
+	 * 
+	 * @param a
+	 * @param m
+	 * @param b
+	 */
 	public void merge(int a, int m, int b) {
 		int[] localArr = new int[intArrField.length];
 		int i, j;
@@ -70,7 +87,7 @@ public class MergeSort extends SSort {
 	public static void main(String[] args) {
 		MergeSort ms = new MergeSort();
 		intArrField = ms.stringArrToIntArr(args);
-		int[] sortArr = ms.sort(0, intArrField.length - 1);
+		int[] sortArr = ms.part(0, intArrField.length - 1);
 		for (int i = 0; i < sortArr.length; i++) {
 			System.out.println(i + 1 + ": " + sortArr[i]);
 		}

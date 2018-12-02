@@ -7,6 +7,9 @@
  */
 public class InsertSort extends SSort implements ISort {
 
+	/**
+	 * sort Methode implementiert den Insert Sort Algorithmus.
+	 */
 	@Override
 	public int[] sort(int[] intArr) {
 		int k;

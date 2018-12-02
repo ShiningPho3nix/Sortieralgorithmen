@@ -30,16 +30,29 @@ public class QuickSort extends SSort {
 	}
 
 	/**
+	 * Die Methode partition startet dem dem Wert an der stelle start als pivot
+	 * Element. von dem start und endpunkt ausgehend wird jeweils geschaut ob der
+	 * Wert größer, bzw. kleiner als das pivotelement ist. Wurde einer gefunden hält
+	 * der entsprechende marker an. Sind beide Marker angehalten, so wird ein neues
+	 * pivot element zurückgegeben, oder es werden die Werte an denen sich die
+	 * Marker aktuell befinden ausgetauscht, je nachdem ob i>=j erfüllt ist oder
+	 * nicht
 	 * 
+	 * @param intArr
+	 * @param start
+	 * @param end
+	 * @return
 	 */
 	public int partition(int[] intArr, int start, int end) {
 		int pivot = intArr[start];
-		int i = start - 1;
+		int i = start - 1; // i und j werden so gewählt, das inizial i>j gegeben ist. Wird eine sortierte
+							// Liste übergeben, so kann das Programm ohne probleme durchlaufen und endet
+							// nicht in der endlosschleife while(true) fest.
 		int j = end + 1;
 		while (true) {
 			do {
 				i++;
-			} while (intArr[i] < pivot); // Druchläuft das Array von vorne, bis ein Wert gefunden wurde, welcher größer
+			} while (intArr[i] < pivot); // Durchläuft das Array von vorne, bis ein Wert gefunden wurde, welcher größer
 											// ist als das gewählte Pivotelement, oder das Pivotelement erreicht wurde
 											// ohne ein größeres Element zu finden.
 			do {

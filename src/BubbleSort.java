@@ -7,6 +7,11 @@
  */
 public class BubbleSort extends SSort implements ISort {
 
+	/**
+	 * sort() Methode implementiert den Bubble Sort algorithmus.
+	 * 
+	 * return
+	 */
 	@Override
 	public int[] sort(int[] intArr) {
 
