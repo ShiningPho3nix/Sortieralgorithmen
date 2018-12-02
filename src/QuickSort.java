@@ -18,12 +18,12 @@ public class QuickSort extends SSort {
 	 * @param end
 	 * @return
 	 */
-	private int[] quicksort(int[] intArr, int start, int end) {
+	private int[] sort(int[] intArr, int start, int end) {
 		int x;
 		if (start < end) {
 			x = partition(intArr, start, end);
-			quicksort(intArr, start, x);
-			quicksort(intArr, x + 1, end);
+			sort(intArr, start, x);
+			sort(intArr, x + 1, end);
 		}
 
 		return intArr;
@@ -75,9 +75,7 @@ public class QuickSort extends SSort {
 				// größer als das pivorelement ist, gefunden und einer in der oberen Hälfte,
 				// welcher kleiner ist als das pivoelement. In diesem fall werden die beiden
 				// werte vertauscht. In allen drei fällen wird weitergemacht bis i>=j.
-				int temp = intArr[i];
-				intArr[i] = intArr[j];
-				intArr[j] = temp;
+				swap(i, j, intArr);
 			}
 		}
 	}
@@ -92,7 +90,7 @@ public class QuickSort extends SSort {
 	public static void main(String[] args) {
 		QuickSort qs = new QuickSort();
 		int[] intArr = qs.stringArrToIntArr(args);
-		int[] sortArr = qs.quicksort(intArr, 0, intArr.length - 1);
+		int[] sortArr = qs.sort(intArr, 0, intArr.length - 1);
 		for (int i = 0; i < sortArr.length; i++) {
 			System.out.println(i + 1 + ": " + sortArr[i]);
 		}

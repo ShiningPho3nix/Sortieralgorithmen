@@ -48,9 +48,7 @@ public class OddEvenTranspositionSort extends SSort {
 																// betrachtet werden, je nachdem welcher startwert
 																// übergeben wird.
 			if (intArr[i] > intArr[i + 1]) {
-				int temp = intArr[i];
-				intArr[i] = intArr[i + 1];
-				intArr[i + 1] = temp;
+				swap(i, i + 1, intArr);
 				sorted = false; // wurde mindestens ein Austausch vorgenommen, wird die Liste als unsortiert
 								// betrachtet und die while schleife läuft ein weiteres mal durch.
 			}

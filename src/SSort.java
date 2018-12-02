@@ -7,7 +7,7 @@
 public class SSort {
 
 	/**
-	 * Mehtode um aus den in der Main Methode übergebenen Strings, ein int[] zu
+	 * Methode um aus den in der Main Methode übergebenen Strings, ein int[] zu
 	 * machen. Zeichen welche keine Zahlen sind werden hierbei ignoriert.
 	 * 
 	 * @param s
@@ -30,6 +30,29 @@ public class SSort {
 			}
 		}
 		return result;
+	}
+
+	/**
+	 * Funktion zum Austauschen zweier Werte i und j.
+	 * 
+	 * @param i
+	 * @param j
+	 * @param intArr
+	 * @return
+	 */
+	public int[] swap(int i, int j, int[] intArr) {
+		int temp = intArr[i];
+		intArr[i] = intArr[j];
+		intArr[j] = temp;
+		return intArr;
+	}
+
+	public static void run(String[] args, ISort sorter) {
+		int[] intArr = sorter.stringArrToIntArr(args);
+		int[] sortArr = sorter.sort(intArr);
+		for (int i = 0; i < sortArr.length; i++) {
+			System.out.println(i + 1 + ": " + sortArr[i]);
+		}
 	}
 
 }

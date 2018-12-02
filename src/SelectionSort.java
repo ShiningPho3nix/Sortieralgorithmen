@@ -9,7 +9,7 @@ public class SelectionSort extends SSort implements ISort {
 	/**
 	 * sort() Methode implementiert den Selection Sort algorithmus.
 	 * 
-	 * return
+	 * @return intArr
 	 */
 	@Override
 	public int[] sort(int[] intArr) {
@@ -26,9 +26,7 @@ public class SelectionSort extends SSort implements ISort {
 			if (min != i) { // Wenn der kleinste WErt nicht der aktuell erste im unsortierten bereich des
 							// Arrays ist, so wird der gefundenen min Wert als erster WErt im unsortiertem
 							// bereich gesetzt.
-				int k = intArr[i];
-				intArr[i] = intArr[min];
-				intArr[min] = k;
+				swap(min, i, intArr);
 			}
 		}
 		return intArr;
@@ -41,11 +39,6 @@ public class SelectionSort extends SSort implements ISort {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SelectionSort ss = new SelectionSort();
-		int[] intArr = ss.stringArrToIntArr(args);
-		int[] sortArr = ss.sort(intArr);
-		for (int i = 0; i < sortArr.length; i++) {
-			System.out.println(i + 1 + ": " + sortArr[i]);
-		}
+		run(args, new SelectionSort());
 	}
 }

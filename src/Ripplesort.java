@@ -7,11 +7,11 @@
  * @author Steffen Dworsky
  *
  */
-public class CocktailShakerSort extends SSort implements ISort {
+public class Ripplesort extends SSort implements ISort {
 
 	/**
 	 * Diese Funktion implementiert den Cocktailsort Algorithmus. Ähnlich wie beim
-	 * Bubblesort werden hier Elemente mit ihrem Nachfolger vergleichen. Hinzu kommt
+	 * Bubblesort werden hier Elemente mit dem Nachfolger vergleichen. Hinzu kommt
 	 * das in beide Richtungen dieser Vergleich durchgeführt wird. Dabei werden
 	 * immer die Grenzen aktualisiert um unnötiges überprüfen zu vermeiden.
 	 */
@@ -26,9 +26,7 @@ public class CocktailShakerSort extends SSort implements ISort {
 								// sind alle elemente sortiert und das sortierte Array kann zurückgegebn werden.
 			for (int i = start; i < end; i++) { // Fürs vorwärts durchlaufen des Arrays
 				if (intArr[i] > intArr[i + 1]) { // Ist ein Wert größer als sein Nachfolger werden diese getauscht.
-					int temp = intArr[i];
-					intArr[i] = intArr[i + 1];
-					intArr[i + 1] = temp;
+					swap(i, i + 1, intArr);
 					newEnd = i; // Als neuer endpunkt wird immer i gesetzt wenn getauscht wird. Beim letztn
 								// tausch sind ab einschließlich i alle Elemente sortiert.
 				}
@@ -38,9 +36,7 @@ public class CocktailShakerSort extends SSort implements ISort {
 								// betrachtet werden muss.
 			for (int i = end; i > start; i--) { // Fürs Rückwerts durchlaufen des Arrays
 				if (intArr[i] < intArr[i - 1]) { // Ist ein Wert kleiner als sein Vorgänger werdne diese getauscht.
-					int temp = intArr[i];
-					intArr[i] = intArr[i - 1];
-					intArr[i - 1] = temp;
+					swap(i, i - 1, intArr);
 					newStart = i; // Als neuer startpunkt wird immer i gesetzt wenn getauscht wird. Beim letztn
 									// tausch sind vor einschließlich i alle Elemente sortiert.
 				}
@@ -59,12 +55,7 @@ public class CocktailShakerSort extends SSort implements ISort {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CocktailShakerSort css = new CocktailShakerSort();
-		int[] intArr = css.stringArrToIntArr(args);
-		int[] sortArr = css.sort(intArr);
-		for (int i = 0; i < sortArr.length; i++) {
-			System.out.println(i + 1 + ": " + sortArr[i]);
-		}
+		run(args, new Ripplesort());
 	}
 
 }
